@@ -1,6 +1,4 @@
 const HouseholdSummary = ({ familyMembersList }) => {
-  console.log("táblázat: ", familyMembersList)
-
   const calculateTotalNetto = () => {
     let totalNetto = 0;
     familyMembersList.forEach(member => {
@@ -9,9 +7,9 @@ const HouseholdSummary = ({ familyMembersList }) => {
     return totalNetto;
   };
 
-  return (<div>
-    <h2>Háztartás összesített jövedelme</h2>
-    <table>
+  return (<div className="mt-5">
+    <h2 className="text-center mb-4">Háztartás összesített jövedelme</h2>
+    <table className="table">
       <thead>
         <tr>
           <th>Családtag</th>
@@ -26,8 +24,8 @@ const HouseholdSummary = ({ familyMembersList }) => {
           </tr>
         ))}
         <tr>
-          <td>Összesen:</td>
-          <td>{calculateTotalNetto()}</td>
+          <td><strong>Összesen:</strong></td>
+          <td><strong>{calculateTotalNetto()}</strong></td>
         </tr>
       </tbody>
     </table>

@@ -1,27 +1,17 @@
 import { useState } from "react";
 import FamilyMembers from "./components/FamilyMember";
 
-
-const FamilyMemberTabs = ({ familyMembersList, newMember }) => {
-
-  const handleAddMember = () => {
-    const personsName = document.getElementById("personsName").value;
-    const personsNetto = document.getElementById("calculatedNetto").innerText;
-    const nm = {
-      memberName: personsName,
-      memberNetto: parseInt(personsNetto)
-    };
-    newMember(nm);
-  };
+const FamilyMemberTabs = ({ familyMembersList, addNewMember, deleteMember, handleSelect, selectedFamilyMember }) => {
 
   return (<>
-    <div>FamilyMemberTabs</div>
-    {familyMembersList.map((member, index) => (
-      <div key={index}>
-        <FamilyMembers name={member.memberName} />
-      </div>
-    ))}
-    <input type="button" value="+" onClick={handleAddMember} />
+    <div className="d-flex align-items-left mb-3 ml-20 gap-1">
+      {familyMembersList.map((member, index) => (
+        <div key={index}>
+          <FamilyMembers name={member.memberName} select={() => handleSelect(member.memberId)} />
+        </div>
+      ))}
+      <input type="button" className="btn btn-secondary" value="+" onClick={addNewMember} />
+    </div>
   </>
   );
 };

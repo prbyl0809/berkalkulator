@@ -1,19 +1,19 @@
-import { useState } from "react";
-
 const NameInput = () => {
-    const [name, setName] = useState('');
-
-    const handleName = (event) => {
-        setName(event.target.value)
-    }
-
     return (<>
-        {name != "" ? <h2>{name.toUpperCase()} BÉRÉNEK KISZÁMÍTÁSA</h2> : <h2>BÉR KISZÁMÍTÁSA</h2>}
-        <label htmlFor="personsName">
-            <h3>Családtag neve</h3>
-            <input type="text" name="Persons name" id="personsName" onChange={handleName} />
-            <p>Add meg a családtag nevét!</p>
-        </label>
+        <div className="mt-4">
+            <h4 id="nameInputTitle">BÉR KISZÁMÍTÁSA</h4>
+            <div className="mb-3">
+                <label htmlFor="personsName" className="form-label">
+                    <h4>Családtag neve</h4>
+                </label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="personsName"
+                />
+                <p className="form-text">Add meg a családtag nevét!</p>
+            </div>
+        </div>
     </>
     );
 }

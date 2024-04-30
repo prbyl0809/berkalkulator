@@ -1,0 +1,15 @@
+.custom-background-main {
+    background-color: #F8FAFC; 
+  }
+
+  .custom-background-card {
+    background-color: #E2E8F0;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    background-color: #6f757a;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    background-color: #6f757a;
+  }
